@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word List Import Tool - Bee Ready</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .format-info {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .format-info code {
+            background: #e0e0e0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+
+        .format-info pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-top: 10px;
+            font-family: 'Courier New', monospace;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 300px;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            resize: vertical;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .file-upload {
+            margin-bottom: 20px;
+        }
+
+        .file-upload input[type="file"] {
+            display: block;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        button.secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        button.secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .output {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            max-height: 500px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .stats {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .stat-label {
+            font-weight: bold;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .stat-value {
+            font-size: 1.5em;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .alert.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .alert.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .sample-data {
+            margin-top: 10px;
+        }
+
+        .sample-data button {
+            font-size: 0.9em;
+            padding: 8px 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐝 Word List Import Tool</h1>
+        <p class="subtitle">Convert your word lists to Bee Ready format</p>
+
+        <div class="section">
+            <h2>Step 1: Prepare Your Data</h2>
+            <div class="format-info">
+                <p><strong>Required CSV Format:</strong></p>
+                <p>Use these column headers: <code>word,definition,sentence,origin,difficulty</code></p>
+                <p style="margin-top: 10px;"><strong>Difficulty values:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 5px;">
+                    <li><code>1</code> = One Bee (Beginner)</li>
+                    <li><code>2</code> = Two Bee (Intermediate)</li>
+                    <li><code>3</code> = Three Bee (Advanced)</li>
+                </ul>
+                <pre>word,definition,sentence,origin,difficulty
+absquatulate,to leave somewhere abruptly,He absquatulated from the party.,Latin,2
+concatenate,to link things together in a series,The program will concatenate the strings.,Latin,3</pre>
+                <div class="sample-data">
+                    <button class="secondary" onclick="loadSampleData()">Load Sample Data</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Step 2: Input Your Data</h2>
+
+            <div class="file-upload">
+                <label><strong>Option A: Upload CSV File</strong></label>
+                <input type="file" id="fileInput" accept=".csv,.txt">
+            </div>
+
+            <div>
+                <label><strong>Option B: Paste CSV Data</strong></label>
+                <textarea id="csvInput" placeholder="Paste your CSV data here..."></textarea>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button onclick="convertToJavaScript()">Convert to JavaScript</button>
+            <button class="secondary" onclick="validateData()">Validate Data</button>
+            <button class="secondary" onclick="clearAll()">Clear All</button>
+        </div>
+
+        <div id="alertContainer"></div>
+
+        <div id="statsContainer" style="display: none;">
+            <div class="section">
+                <h2>Statistics</h2>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-label">Total Words</div>
+                        <div class="stat-value" id="totalWords">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">One Bee</div>
+                        <div class="stat-value" id="oneBeeCount">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Two Bee</div>
+                        <div class="stat-value" id="twoBeeCount">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Three Bee</div>
+                        <div class="stat-value" id="threeBeeCount">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="outputContainer" style="display: none;">
+            <div class="section">
+                <h2>Step 3: Copy Generated JavaScript</h2>
+                <p style="margin-bottom: 10px;">Copy this code and paste it into <code>words.js</code>, replacing the existing wordDatabase object.</p>
+                <div class="button-group">
+                    <button onclick="copyOutput()">Copy to Clipboard</button>
+                    <button class="secondary" onclick="downloadOutput()">Download as words.js</button>
+                </div>
+                <div id="output" class="output"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // File upload handler
+        document.getElementById('fileInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('csvInput').value = e.target.result;
+                    showAlert('File loaded successfully!', 'success');
+                };
+                reader.readAsText(file);
+            }
+        });
+
+        function loadSampleData() {
+            const sample = `word,definition,sentence,origin,difficulty
+apple,a round fruit with red or green skin,She ate a fresh apple for lunch.,Old English,1
+beautiful,pleasing to the senses,The sunset was beautiful.,French,1
+challenge,a difficult task that tests abilities,The puzzle was a real challenge.,French,1
+accommodate,to provide lodging or space for,The hotel can accommodate 200 guests.,Latin,2
+conscientious,wishing to do what is right,She is a conscientious student.,Latin,2
+schadenfreude,pleasure from another's misfortune,He felt schadenfreude when his rival failed.,German,3
+perspicacious,having keen insight,The perspicacious detective solved the case.,Latin,3`;
+
+            document.getElementById('csvInput').value = sample;
+            showAlert('Sample data loaded! Click "Convert to JavaScript" to see the output.', 'info');
+        }
+
+        function parseCSV(csv) {
+            const lines = csv.trim().split('\n');
+            const headers = lines[0].split(',').map(h => h.trim());
+
+            // Validate headers
+            const requiredHeaders = ['word', 'definition', 'sentence', 'origin', 'difficulty'];
+            const hasAllHeaders = requiredHeaders.every(h => headers.includes(h));
+
+            if (!hasAllHeaders) {
+                throw new Error('CSV must have headers: word, definition, sentence, origin, difficulty');
+            }
+
+            const words = { oneBee: [], twoBee: [], threeBee: [] };
+
+            for (let i = 1; i < lines.length; i++) {
+                if (!lines[i].trim()) continue;
+
+                const values = parseCSVLine(lines[i]);
+
+                if (values.length !== headers.length) {
+                    console.warn(`Line ${i + 1} has incorrect number of columns, skipping`);
+                    continue;
+                }
+
+                const wordObj = {};
+                headers.forEach((header, index) => {
+                    wordObj[header] = values[index];
+                });
+
+                // Create word entry
+                const entry = {
+                    word: wordObj.word.trim(),
+                    definition: wordObj.definition.trim(),
+                    sentence: wordObj.sentence.trim(),
+                    origin: wordObj.origin.trim()
+                };
+
+                // Add to appropriate difficulty array
+                const difficulty = parseInt(wordObj.difficulty);
+                if (difficulty === 1) {
+                    words.oneBee.push(entry);
+                } else if (difficulty === 2) {
+                    words.twoBee.push(entry);
+                } else if (difficulty === 3) {
+                    words.threeBee.push(entry);
+                }
+            }
+
+            return words;
+        }
+
+        function parseCSVLine(line) {
+            const values = [];
+            let current = '';
+            let inQuotes = false;
+
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+
+                if (char === '"') {
+                    inQuotes = !inQuotes;
+                } else if (char === ',' && !inQuotes) {
+                    values.push(current);
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+            values.push(current);
+
+            return values.map(v => v.trim().replace(/^"|"$/g, ''));
+        }
+
+        function validateData() {
+            const csv = document.getElementById('csvInput').value;
+
+            if (!csv.trim()) {
+                showAlert('Please enter or upload CSV data first.', 'error');
+                return false;
+            }
+
+            try {
+                const words = parseCSV(csv);
+                const total = words.oneBee.length + words.twoBee.length + words.threeBee.length;
+
+                if (total === 0) {
+                    showAlert('No valid words found. Please check your CSV format.', 'error');
+                    return false;
+                }
+
+                updateStats(words);
+                showAlert(`✓ Validation successful! Found ${total} valid words.`, 'success');
+                return true;
+            } catch (error) {
+                showAlert('Error: ' + error.message, 'error');
+                return false;
+            }
+        }
+
+        function convertToJavaScript() {
+            if (!validateData()) {
+                return;
+            }
+
+            const csv = document.getElementById('csvInput').value;
+            const words = parseCSV(csv);
+
+            const output = generateJavaScript(words);
+
+            document.getElementById('output').textContent = output;
+            document.getElementById('outputContainer').style.display = 'block';
+
+            showAlert('JavaScript code generated successfully!', 'success');
+        }
+
+        function generateJavaScript(words) {
+            let js = `// Spelling Bee Word Database\n`;
+            js += `// Generated on ${new Date().toLocaleDateString()}\n\n`;
+            js += `const wordDatabase = {\n`;
+
+            // One Bee
+            js += `    // ONE BEE - Beginner Level (${words.oneBee.length} words)\n`;
+            js += `    oneBee: [\n`;
+            words.oneBee.forEach((word, index) => {
+                js += `        {\n`;
+                js += `            word: "${escapeString(word.word)}",\n`;
+                js += `            definition: "${escapeString(word.definition)}",\n`;
+                js += `            sentence: "${escapeString(word.sentence)}",\n`;
+                js += `            origin: "${escapeString(word.origin)}"\n`;
+                js += `        }${index < words.oneBee.length - 1 ? ',' : ''}\n`;
+            });
+            js += `    ],\n\n`;
+
+            // Two Bee
+            js += `    // TWO BEE - Intermediate Level (${words.twoBee.length} words)\n`;
+            js += `    twoBee: [\n`;
+            words.twoBee.forEach((word, index) => {
+                js += `        {\n`;
+                js += `            word: "${escapeString(word.word)}",\n`;
+                js += `            definition: "${escapeString(word.definition)}",\n`;
+                js += `            sentence: "${escapeString(word.sentence)}",\n`;
+                js += `            origin: "${escapeString(word.origin)}"\n`;
+                js += `        }${index < words.twoBee.length - 1 ? ',' : ''}\n`;
+            });
+            js += `    ],\n\n`;
+
+            // Three Bee
+            js += `    // THREE BEE - Advanced Level (${words.threeBee.length} words)\n`;
+            js += `    threeBee: [\n`;
+            words.threeBee.forEach((word, index) => {
+                js += `        {\n`;
+                js += `            word: "${escapeString(word.word)}",\n`;
+                js += `            definition: "${escapeString(word.definition)}",\n`;
+                js += `            sentence: "${escapeString(word.sentence)}",\n`;
+                js += `            origin: "${escapeString(word.origin)}"\n`;
+                js += `        }${index < words.threeBee.length - 1 ? ',' : ''}\n`;
+            });
+            js += `    ]\n`;
+            js += `};\n\n`;
+
+            // Add helper functions
+            js += `// Helper function to get words by difficulty\n`;
+            js += `function getWordsByDifficulty(level) {\n`;
+            js += `    switch(level) {\n`;
+            js += `        case 1:\n`;
+            js += `            return wordDatabase.oneBee;\n`;
+            js += `        case 2:\n`;
+            js += `            return [...wordDatabase.oneBee, ...wordDatabase.twoBee];\n`;
+            js += `        case 3:\n`;
+            js += `            return [...wordDatabase.oneBee, ...wordDatabase.twoBee, ...wordDatabase.threeBee];\n`;
+            js += `        default:\n`;
+            js += `            return wordDatabase.oneBee;\n`;
+            js += `    }\n`;
+            js += `}\n\n`;
+
+            js += `// Helper function to shuffle array\n`;
+            js += `function shuffleArray(array) {\n`;
+            js += `    const shuffled = [...array];\n`;
+            js += `    for (let i = shuffled.length - 1; i > 0; i--) {\n`;
+            js += `        const j = Math.floor(Math.random() * (i + 1));\n`;
+            js += `        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];\n`;
+            js += `    }\n`;
+            js += `    return shuffled;\n`;
+            js += `}\n`;
+
+            return js;
+        }
+
+        function escapeString(str) {
+            return str.replace(/"/g, '\\"').replace(/\n/g, '\\n');
+        }
+
+        function updateStats(words) {
+            const total = words.oneBee.length + words.twoBee.length + words.threeBee.length;
+
+            document.getElementById('totalWords').textContent = total;
+            document.getElementById('oneBeeCount').textContent = words.oneBee.length;
+            document.getElementById('twoBeeCount').textContent = words.twoBee.length;
+            document.getElementById('threeBeeCount').textContent = words.threeBee.length;
+
+            document.getElementById('statsContainer').style.display = 'block';
+        }
+
+        function copyOutput() {
+            const output = document.getElementById('output').textContent;
+            navigator.clipboard.writeText(output).then(() => {
+                showAlert('Copied to clipboard!', 'success');
+            }).catch(() => {
+                showAlert('Failed to copy. Please select and copy manually.', 'error');
+            });
+        }
+
+        function downloadOutput() {
+            const output = document.getElementById('output').textContent;
+            const blob = new Blob([output], { type: 'text/javascript' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'words.js';
+            a.click();
+            URL.revokeObjectURL(url);
+            showAlert('File downloaded!', 'success');
+        }
+
+        function clearAll() {
+            document.getElementById('csvInput').value = '';
+            document.getElementById('fileInput').value = '';
+            document.getElementById('output').textContent = '';
+            document.getElementById('outputContainer').style.display = 'none';
+            document.getElementById('statsContainer').style.display = 'none';
+            document.getElementById('alertContainer').innerHTML = '';
+        }
+
+        function showAlert(message, type) {
+            const alertContainer = document.getElementById('alertContainer');
+            alertContainer.innerHTML = `<div class="alert ${type}">${message}</div>`;
+
+            setTimeout(() => {
+                alertContainer.innerHTML = '';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
