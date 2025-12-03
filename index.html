@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scripps Spelling Bee Practice</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐝 Spelling Bee Practice</h1>
+            <p class="subtitle">Prepare for Scripps National Spelling Bee</p>
+        </header>
+
+        <!-- Welcome Screen -->
+        <div id="welcomeScreen" class="screen active">
+            <div class="welcome-content">
+                <h2>Welcome to Bee Ready!</h2>
+                <p>Practice spelling with contest-like conditions</p>
+
+                <div class="difficulty-selection">
+                    <h3>Select Your Difficulty Level</h3>
+                    <div class="difficulty-buttons">
+                        <button class="difficulty-btn" data-level="1">
+                            <span class="bee-icon">🐝</span>
+                            <h4>One Bee</h4>
+                            <p>Beginner Level<br>~800 words</p>
+                        </button>
+                        <button class="difficulty-btn" data-level="2">
+                            <span class="bee-icon">🐝🐝</span>
+                            <h4>Two Bee</h4>
+                            <p>Intermediate Level<br>~2,100 words</p>
+                        </button>
+                        <button class="difficulty-btn" data-level="3">
+                            <span class="bee-icon">🐝🐝🐝</span>
+                            <h4>Three Bee</h4>
+                            <p>Advanced Level<br>~1,200 words</p>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mode-selection">
+                    <h3>Practice Mode</h3>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="timedMode">
+                        <span>Timed Mode (2 minutes per word)</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="pronunciationMode" checked>
+                        <span>Auto-pronounce words</span>
+                    </label>
+                </div>
+
+                <button id="startBtn" class="primary-btn" disabled>Start Practice</button>
+            </div>
+        </div>
+
+        <!-- Practice Screen -->
+        <div id="practiceScreen" class="screen">
+            <div class="stats-bar">
+                <div class="stat">
+                    <span class="stat-label">Score:</span>
+                    <span id="score" class="stat-value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Correct:</span>
+                    <span id="correct" class="stat-value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Incorrect:</span>
+                    <span id="incorrect" class="stat-value">0</span>
+                </div>
+                <div class="stat" id="timerStat" style="display: none;">
+                    <span class="stat-label">Time:</span>
+                    <span id="timer" class="stat-value">2:00</span>
+                </div>
+            </div>
+
+            <div class="word-display">
+                <h2 id="wordNumber">Word #1</h2>
+                <div class="difficulty-badge" id="currentDifficulty"></div>
+            </div>
+
+            <div class="word-info">
+                <button class="info-btn" id="pronounceBtn">
+                    <span>🔊</span> Pronounce
+                </button>
+                <button class="info-btn" id="definitionBtn">
+                    <span>📖</span> Definition
+                </button>
+                <button class="info-btn" id="sentenceBtn">
+                    <span>💬</span> Use in Sentence
+                </button>
+                <button class="info-btn" id="originBtn">
+                    <span>🌍</span> Language of Origin
+                </button>
+            </div>
+
+            <div id="wordDetails" class="word-details"></div>
+
+            <div class="spelling-input">
+                <input
+                    type="text"
+                    id="spellingInput"
+                    placeholder="Type the spelling here..."
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+                <button id="submitBtn" class="primary-btn">Submit</button>
+                <button id="skipBtn" class="secondary-btn">Skip</button>
+            </div>
+
+            <div id="feedback" class="feedback"></div>
+
+            <button id="exitBtn" class="exit-btn">Exit Practice</button>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="screen">
+            <div class="results-content">
+                <h2>Practice Complete!</h2>
+                <div class="results-summary">
+                    <div class="result-item">
+                        <span class="result-label">Total Words:</span>
+                        <span class="result-value" id="totalWords">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Correct:</span>
+                        <span class="result-value correct" id="finalCorrect">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Incorrect:</span>
+                        <span class="result-value incorrect" id="finalIncorrect">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Accuracy:</span>
+                        <span class="result-value" id="accuracy">0%</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Final Score:</span>
+                        <span class="result-value score" id="finalScore">0</span>
+                    </div>
+                </div>
+
+                <div class="missed-words" id="missedWords"></div>
+
+                <div class="results-actions">
+                    <button id="practiceAgainBtn" class="primary-btn">Practice Again</button>
+                    <button id="changeSettingsBtn" class="secondary-btn">Change Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="note">
+            <strong>Note:</strong> This app uses sample words for demonstration.
+            To use official Scripps lists, add the 450-word School Study List and 4,000-word Words of Champions to <code>words.js</code>.
+            <br>
+            Official lists available at: <a href="https://spellingbee.com/" target="_blank">spellingbee.com</a>
+        </p>
+    </footer>
+
+    <script src="words.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
