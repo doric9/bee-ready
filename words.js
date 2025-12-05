@@ -183,6 +183,516 @@ const wordDatabase = {
             definition: "a thing characteristic of its kind or illustrating a general rule",
             sentence: "Can you give me an example of a mammal?",
             origin: "Latin"
+        },
+        {
+            word: "tag",
+            definition: "a label attached to someone or something; a children's chasing game",
+            sentence: "The children played tag in the playground.",
+            origin: "Unknown"
+        },
+        {
+            word: "send",
+            definition: "to cause to go or be taken to a destination",
+            sentence: "Please send the letter by mail.",
+            origin: "Old English"
+        },
+        {
+            word: "deck",
+            definition: "a flat surface, like the floor of a ship or a platform",
+            sentence: "We sat on the deck and watched the sunset.",
+            origin: "Dutch"
+        },
+        {
+            word: "stuck",
+            definition: "unable to move or make progress",
+            sentence: "The car got stuck in the mud.",
+            origin: "Old English"
+        },
+        {
+            word: "snug",
+            definition: "comfortable, warm, and cozy",
+            sentence: "The cat was snug in its basket.",
+            origin: "Germanic"
+        },
+        {
+            word: "fish",
+            definition: "a cold-blooded animal that lives in water",
+            sentence: "We saw many colorful fish in the aquarium.",
+            origin: "Old English"
+        },
+        {
+            word: "hold",
+            definition: "to grasp, carry, or support with one's hands",
+            sentence: "Please hold my hand when we cross the street.",
+            origin: "Old English"
+        },
+        {
+            word: "mind",
+            definition: "the element of a person that thinks and feels; to care about",
+            sentence: "I don't mind if we leave early.",
+            origin: "Old English"
+        },
+        {
+            word: "stay",
+            definition: "to remain in the same place; to continue to be",
+            sentence: "Can you stay for dinner?",
+            origin: "Latin"
+        },
+        {
+            word: "scrub",
+            definition: "to rub hard to clean something",
+            sentence: "Scrub your hands with soap and water.",
+            origin: "Germanic"
+        },
+        {
+            word: "draw",
+            definition: "to make a picture with a pencil, pen, or crayon",
+            sentence: "She likes to draw pictures of animals.",
+            origin: "Old English"
+        },
+        {
+            word: "brown",
+            definition: "a color like that of wood or chocolate",
+            sentence: "The bear has brown fur.",
+            origin: "Old English"
+        },
+        {
+            word: "cozy",
+            definition: "giving a feeling of comfort, warmth, and relaxation",
+            sentence: "The cabin was cozy with a warm fire.",
+            origin: "Scottish"
+        },
+        {
+            word: "tint",
+            definition: "a shade or variety of color",
+            sentence: "The sky had a pink tint at sunset.",
+            origin: "Latin"
+        },
+        {
+            word: "milk",
+            definition: "a white liquid produced by mammals to feed their young",
+            sentence: "I drink a glass of milk every morning.",
+            origin: "Old English"
+        },
+        {
+            word: "yawn",
+            definition: "to open one's mouth wide when tired or bored",
+            sentence: "She began to yawn during the long movie.",
+            origin: "Old English"
+        },
+        {
+            word: "tank",
+            definition: "a large container for liquid or gas; an armored military vehicle",
+            sentence: "The fish tank was full of water.",
+            origin: "Indian"
+        },
+        {
+            word: "want",
+            definition: "to wish for or desire something",
+            sentence: "I want to go to the park.",
+            origin: "Old Norse"
+        },
+        {
+            word: "crowd",
+            definition: "a large number of people gathered together",
+            sentence: "A big crowd watched the parade.",
+            origin: "Old English"
+        },
+        {
+            word: "pond",
+            definition: "a small body of still water",
+            sentence: "Ducks swam in the pond.",
+            origin: "Middle English"
+        },
+        {
+            word: "skirt",
+            definition: "a garment that hangs from the waist",
+            sentence: "She wore a blue skirt to school.",
+            origin: "Old Norse"
+        },
+        {
+            word: "sharks",
+            definition: "large fish with sharp teeth that live in the ocean",
+            sentence: "Sharks are powerful predators.",
+            origin: "Unknown"
+        },
+        {
+            word: "quilt",
+            definition: "a warm bed covering made of padding enclosed between layers of fabric",
+            sentence: "Grandma made a colorful quilt for my bed.",
+            origin: "Latin"
+        },
+        {
+            word: "twigs",
+            definition: "small, thin branches of a tree or bush",
+            sentence: "The bird gathered twigs to build a nest.",
+            origin: "Old English"
+        },
+        {
+            word: "taffy",
+            definition: "a type of chewy candy",
+            sentence: "We bought saltwater taffy at the beach.",
+            origin: "American English"
+        },
+        {
+            word: "comfy",
+            definition: "comfortable and cozy",
+            sentence: "These slippers are very comfy.",
+            origin: "English"
+        },
+        {
+            word: "stretch",
+            definition: "to extend or lengthen; to make or become longer or wider",
+            sentence: "Always stretch before exercising.",
+            origin: "Old English"
+        },
+        {
+            word: "tight",
+            definition: "firmly fixed; not loose",
+            sentence: "The lid was too tight to open.",
+            origin: "Old Norse"
+        },
+        {
+            word: "candy",
+            definition: "sweet food made with sugar or chocolate",
+            sentence: "The children enjoyed candy at the party.",
+            origin: "Arabic"
+        },
+        {
+            word: "scrunch",
+            definition: "to crush or squeeze into a compact mass",
+            sentence: "She scrunched the paper into a ball.",
+            origin: "English"
+        },
+        {
+            word: "ruby",
+            definition: "a precious stone that is typically red",
+            sentence: "The ring had a beautiful ruby.",
+            origin: "Latin"
+        },
+        {
+            word: "close",
+            definition: "near in space or time; to shut",
+            sentence: "Please close the door behind you.",
+            origin: "Latin"
+        },
+        {
+            word: "tackle",
+            definition: "equipment for a task; to deal with or attempt to deal with",
+            sentence: "We need to tackle this problem together.",
+            origin: "Germanic"
+        },
+        {
+            word: "wire",
+            definition: "metal drawn out into a thin flexible thread",
+            sentence: "The electrician fixed the broken wire.",
+            origin: "Old English"
+        },
+        {
+            word: "skater",
+            definition: "a person who skates on ice or wheels",
+            sentence: "The skater performed a perfect jump.",
+            origin: "Dutch"
+        },
+        {
+            word: "giant",
+            definition: "an imaginary or mythical being of great size; something very large",
+            sentence: "The giant in the story was ten feet tall.",
+            origin: "Greek"
+        },
+        {
+            word: "bucket",
+            definition: "a round, open container with a handle for carrying liquids",
+            sentence: "Fill the bucket with water.",
+            origin: "Old English"
+        },
+        {
+            word: "chance",
+            definition: "a possibility of something happening; luck",
+            sentence: "There's a good chance of rain today.",
+            origin: "Latin"
+        },
+        {
+            word: "baskets",
+            definition: "containers made of woven material",
+            sentence: "We carried the fruit in baskets.",
+            origin: "Unknown"
+        },
+        {
+            word: "tender",
+            definition: "soft, gentle, or easily damaged",
+            sentence: "The meat was tender and delicious.",
+            origin: "Latin"
+        },
+        {
+            word: "paste",
+            definition: "a thick, soft substance; to stick with glue",
+            sentence: "Mix flour and water to make paste.",
+            origin: "Latin"
+        },
+        {
+            word: "melon",
+            definition: "a large fruit with sweet, juicy flesh",
+            sentence: "We ate watermelon on the hot day.",
+            origin: "Greek"
+        },
+        {
+            word: "farmer",
+            definition: "a person who owns or manages a farm",
+            sentence: "The farmer planted corn in the field.",
+            origin: "Latin"
+        },
+        {
+            word: "parent",
+            definition: "a mother or father",
+            sentence: "Each parent attended the school meeting.",
+            origin: "Latin"
+        },
+        {
+            word: "tail",
+            definition: "the rear part of an animal, especially when extended beyond the body",
+            sentence: "The dog wagged its tail happily.",
+            origin: "Old English"
+        },
+        {
+            word: "hockey",
+            definition: "a game played on ice or grass with sticks and a puck or ball",
+            sentence: "He plays hockey every Saturday.",
+            origin: "French"
+        },
+        {
+            word: "slime",
+            definition: "a thick, slippery liquid substance",
+            sentence: "The snail left a trail of slime.",
+            origin: "Old English"
+        },
+        {
+            word: "insects",
+            definition: "small animals with six legs and a body divided into three parts",
+            sentence: "Butterflies and ants are insects.",
+            origin: "Latin"
+        },
+        {
+            word: "teeth",
+            definition: "hard, white structures in the mouth used for biting and chewing",
+            sentence: "Brush your teeth twice a day.",
+            origin: "Old English"
+        },
+        {
+            word: "shortcut",
+            definition: "a quicker route to a destination",
+            sentence: "We took a shortcut through the park.",
+            origin: "English"
+        },
+        {
+            word: "bait",
+            definition: "food used to attract fish or animals",
+            sentence: "We used worms as bait for fishing.",
+            origin: "Old Norse"
+        },
+        {
+            word: "lure",
+            definition: "something that tempts or attracts",
+            sentence: "The colorful lure attracted many fish.",
+            origin: "French"
+        },
+        {
+            word: "cluster",
+            definition: "a group of similar things growing or held together",
+            sentence: "A cluster of grapes hung from the vine.",
+            origin: "Old English"
+        },
+        {
+            word: "forest",
+            definition: "a large area covered with trees and undergrowth",
+            sentence: "We went hiking in the forest.",
+            origin: "Latin"
+        },
+        {
+            word: "hollow",
+            definition: "having an empty space inside",
+            sentence: "The tree trunk was hollow inside.",
+            origin: "Old English"
+        },
+        {
+            word: "spinning",
+            definition: "turning around quickly",
+            sentence: "The top kept spinning on the table.",
+            origin: "Old English"
+        },
+        {
+            word: "baffling",
+            definition: "confusing or puzzling",
+            sentence: "The mystery was completely baffling.",
+            origin: "Unknown"
+        },
+        {
+            word: "sizzling",
+            definition: "making a hissing sound when frying or burning",
+            sentence: "The bacon was sizzling in the pan.",
+            origin: "Imitative"
+        },
+        {
+            word: "hoist",
+            definition: "to raise or lift something using ropes or machinery",
+            sentence: "They hoist the flag every morning.",
+            origin: "Germanic"
+        },
+        {
+            word: "search",
+            definition: "to look carefully for something",
+            sentence: "We search for shells at the beach.",
+            origin: "Latin"
+        },
+        {
+            word: "remind",
+            definition: "to cause someone to remember something",
+            sentence: "Please remind me about the meeting.",
+            origin: "Latin"
+        },
+        {
+            word: "mango",
+            definition: "a tropical fruit with sweet orange flesh",
+            sentence: "The ripe mango was delicious.",
+            origin: "Tamil"
+        },
+        {
+            word: "coral",
+            definition: "a hard substance formed by sea creatures; a pinkish-red color",
+            sentence: "The coral reef was full of colorful fish.",
+            origin: "Greek"
+        },
+        {
+            word: "jangle",
+            definition: "to make a ringing metallic sound",
+            sentence: "The keys jangle in my pocket.",
+            origin: "Old French"
+        },
+        {
+            word: "shimmer",
+            definition: "to shine with a soft, flickering light",
+            sentence: "The lake began to shimmer in the moonlight.",
+            origin: "Old English"
+        },
+        {
+            word: "blossoms",
+            definition: "flowers, especially on a fruit tree",
+            sentence: "Cherry blossoms bloom in spring.",
+            origin: "Old English"
+        },
+        {
+            word: "swampy",
+            definition: "like a swamp; wet and muddy",
+            sentence: "The swampy ground was hard to walk through.",
+            origin: "Germanic"
+        },
+        {
+            word: "studded",
+            definition: "decorated with studs or small objects; covered with",
+            sentence: "The belt was studded with jewels.",
+            origin: "Old English"
+        },
+        {
+            word: "focus",
+            definition: "to concentrate attention or effort on something",
+            sentence: "Please focus on your homework.",
+            origin: "Latin"
+        },
+        {
+            word: "distress",
+            definition: "extreme anxiety, sorrow, or pain",
+            sentence: "The lost child was in distress.",
+            origin: "Latin"
+        },
+        {
+            word: "lessons",
+            definition: "periods of learning or teaching; things learned",
+            sentence: "We have piano lessons every Tuesday.",
+            origin: "Latin"
+        },
+        {
+            word: "moment",
+            definition: "a very brief period of time",
+            sentence: "Wait just a moment, please.",
+            origin: "Latin"
+        },
+        {
+            word: "ajar",
+            definition: "slightly open",
+            sentence: "The door was left ajar.",
+            origin: "Old English"
+        },
+        {
+            word: "basil",
+            definition: "an aromatic herb used in cooking",
+            sentence: "Add fresh basil to the pasta sauce.",
+            origin: "Greek"
+        },
+        {
+            word: "triple",
+            definition: "consisting of three parts; to multiply by three",
+            sentence: "She scored a triple in the baseball game.",
+            origin: "Latin"
+        },
+        {
+            word: "satin",
+            definition: "a smooth, glossy fabric",
+            sentence: "Her dress was made of white satin.",
+            origin: "Arabic"
+        },
+        {
+            word: "ahoy",
+            definition: "a call used to attract attention, especially on a ship",
+            sentence: "The sailor shouted 'Ahoy!' to the passing boat.",
+            origin: "Dutch"
+        },
+        {
+            word: "signal",
+            definition: "a gesture, action, or sound that conveys information",
+            sentence: "The traffic signal turned green.",
+            origin: "Latin"
+        },
+        {
+            word: "answer",
+            definition: "a response to a question; to respond",
+            sentence: "Please answer the phone.",
+            origin: "Old English"
+        },
+        {
+            word: "shuffle",
+            definition: "to walk without lifting one's feet; to mix cards randomly",
+            sentence: "Shuffle the deck before dealing.",
+            origin: "Germanic"
+        },
+        {
+            word: "dollop",
+            definition: "a small lump or blob of a soft substance",
+            sentence: "Add a dollop of whipped cream on top.",
+            origin: "Unknown"
+        },
+        {
+            word: "minnows",
+            definition: "small freshwater fish",
+            sentence: "Minnows swam in the shallow stream.",
+            origin: "Old English"
+        },
+        {
+            word: "silver",
+            definition: "a shiny grayish-white metal; a color like this metal",
+            sentence: "She wore a silver bracelet.",
+            origin: "Old English"
+        },
+        {
+            word: "before",
+            definition: "during the time preceding; in front of",
+            sentence: "Wash your hands before dinner.",
+            origin: "Old English"
+        },
+        {
+            word: "circus",
+            definition: "a traveling show with acrobats, clowns, and trained animals",
+            sentence: "We went to the circus and saw elephants.",
+            origin: "Latin"
         }
     ],
 
