@@ -367,6 +367,306 @@ const wordDatabase = {
             definition: "involving many carefully arranged parts; detailed",
             sentence: "They created an elaborate plan for the surprise party.",
             origin: "Latin"
+        },
+        {
+            word: "zombielike",
+            definition: "resembling a zombie; moving or behaving in a sluggish or mechanical manner",
+            sentence: "After staying up all night, he walked around in a zombielike state.",
+            origin: "West African and English"
+        },
+        {
+            word: "warlock",
+            definition: "a man who practices witchcraft; a sorcerer",
+            sentence: "The old warlock cast a spell to protect the village.",
+            origin: "Old English"
+        },
+        {
+            word: "colossus",
+            definition: "a statue that is much bigger than life size; something of great size or importance",
+            sentence: "The Colossus of Rhodes was one of the Seven Wonders of the Ancient World.",
+            origin: "Greek"
+        },
+        {
+            word: "convulsively",
+            definition: "in a manner involving sudden, violent, irregular movements",
+            sentence: "She laughed convulsively at the comedian's jokes.",
+            origin: "Latin"
+        },
+        {
+            word: "dimensional",
+            definition: "relating to or having dimensions; having measurable extent",
+            sentence: "The architect created a three-dimensional model of the building.",
+            origin: "Latin"
+        },
+        {
+            word: "garishly",
+            definition: "in an excessively bright or showy manner; tastelessly colorful",
+            sentence: "The room was garishly decorated with bright pink and orange.",
+            origin: "Unknown"
+        },
+        {
+            word: "graffitist",
+            definition: "a person who creates graffiti",
+            sentence: "The graffitist spray-painted a mural on the side of the building.",
+            origin: "Italian"
+        },
+        {
+            word: "Everest",
+            definition: "the highest mountain in the world, located in the Himalayas",
+            sentence: "Climbing Mount Everest is a dangerous and challenging achievement.",
+            origin: "English"
+        },
+        {
+            word: "dexterity",
+            definition: "skill in performing tasks, especially with the hands; mental skill or quickness",
+            sentence: "The surgeon's dexterity was evident during the complex operation.",
+            origin: "Latin"
+        },
+        {
+            word: "cavorting",
+            definition: "jumping or dancing around excitedly; engaging in lively or boisterous activity",
+            sentence: "The children were cavorting in the playground during recess.",
+            origin: "Unknown"
+        },
+        {
+            word: "marauder",
+            definition: "a person who makes raids in search of plunder; a raider",
+            sentence: "The marauder stole supplies from the village before disappearing into the night.",
+            origin: "French"
+        },
+        {
+            word: "conscience",
+            definition: "an inner feeling or voice that acts as a guide to the rightness or wrongness of one's behavior",
+            sentence: "His conscience bothered him after he told a lie.",
+            origin: "Latin"
+        },
+        {
+            word: "battlements",
+            definition: "a parapet at the top of a wall with gaps for shooting through; defensive fortifications",
+            sentence: "The soldiers stood watch on the castle's battlements.",
+            origin: "French"
+        },
+        {
+            word: "deferential",
+            definition: "showing respectful submission or yielding to the judgment of another",
+            sentence: "The students were deferential toward their elderly teacher.",
+            origin: "Latin"
+        },
+        {
+            word: "albatross",
+            definition: "a large seabird; something that causes persistent worry or difficulty",
+            sentence: "The ancient mariner wore the albatross around his neck as a burden.",
+            origin: "Portuguese and Arabic"
+        },
+        {
+            word: "khaki",
+            definition: "a dull brownish-yellow color; fabric or clothing of this color",
+            sentence: "The soldiers wore khaki uniforms for camouflage.",
+            origin: "Urdu and Persian"
+        },
+        {
+            word: "opalescent",
+            definition: "showing varying colors as an opal does; iridescent",
+            sentence: "The soap bubble had an opalescent sheen in the sunlight.",
+            origin: "Latin"
+        },
+        {
+            word: "asphalt",
+            definition: "a sticky black substance used for paving roads and waterproofing",
+            sentence: "The workers laid fresh asphalt on the highway.",
+            origin: "Greek"
+        },
+        {
+            word: "Yiddish",
+            definition: "a language used by Jews in central and eastern Europe, blending German and Hebrew",
+            sentence: "My grandmother spoke Yiddish with her family.",
+            origin: "German"
+        },
+        {
+            word: "talcum",
+            definition: "a soft white powder made from talc, used in cosmetics and toiletries",
+            sentence: "She sprinkled talcum powder on the baby after the bath.",
+            origin: "Arabic and Latin"
+        },
+        {
+            word: "tranquilizer",
+            definition: "a medicinal drug taken to reduce tension or anxiety",
+            sentence: "The veterinarian gave the anxious dog a tranquilizer.",
+            origin: "Latin"
+        },
+        {
+            word: "equestrian",
+            definition: "relating to horseback riding; a person who rides horses",
+            sentence: "She participated in equestrian competitions every summer.",
+            origin: "Latin"
+        },
+        {
+            word: "plaited",
+            definition: "woven or braided; formed by intertwining strands",
+            sentence: "She wore her hair plaited in two long braids.",
+            origin: "Latin"
+        },
+        {
+            word: "monsieur",
+            definition: "a title or form of address for a French-speaking man, equivalent to Mr.",
+            sentence: "Monsieur Dupont greeted us at the door of his restaurant.",
+            origin: "French"
+        },
+        {
+            word: "manticores",
+            definition: "mythical creatures with a human head, lion's body, and scorpion's tail",
+            sentence: "The legend spoke of manticores guarding the ancient temple.",
+            origin: "Greek and Persian"
+        },
+        {
+            word: "prestigious",
+            definition: "inspiring respect and admiration; having high status",
+            sentence: "She won a prestigious award for her scientific research.",
+            origin: "Latin"
+        },
+        {
+            word: "fraidycat",
+            definition: "a person who is easily frightened; a coward",
+            sentence: "Don't be such a fraidycat about the harmless spider.",
+            origin: "American English"
+        },
+        {
+            word: "guttural",
+            definition: "relating to the throat; a harsh-sounding speech sound",
+            sentence: "The language had many guttural consonants that were difficult to pronounce.",
+            origin: "Latin"
+        },
+        {
+            word: "lo mein",
+            definition: "a Chinese dish of wheat-flour noodles with vegetables and often meat or shrimp",
+            sentence: "We ordered chicken lo mein from the Chinese restaurant.",
+            origin: "Chinese"
+        },
+        {
+            word: "courier",
+            definition: "a messenger who transports goods or documents",
+            sentence: "The courier delivered the important package by noon.",
+            origin: "Latin and French"
+        },
+        {
+            word: "sans serif",
+            definition: "a style of typeface without small projecting features at the ends of strokes",
+            sentence: "The modern logo used a clean sans serif font.",
+            origin: "French and Latin"
+        },
+        {
+            word: "psyche",
+            definition: "the human soul, mind, or spirit",
+            sentence: "The therapist explored the patient's psyche during their sessions.",
+            origin: "Greek"
+        },
+        {
+            word: "stucco",
+            definition: "a fine plaster used for coating wall surfaces or molding into decorative forms",
+            sentence: "The Mediterranean-style house had white stucco walls.",
+            origin: "Italian"
+        },
+        {
+            word: "Frankenstein",
+            definition: "a thing that becomes terrifying to its maker; a monster created by science",
+            sentence: "The scientist realized his creation had become a Frankenstein.",
+            origin: "German"
+        },
+        {
+            word: "schema",
+            definition: "a representation of a plan or theory in the form of an outline or model",
+            sentence: "The database administrator designed a new schema for the system.",
+            origin: "Greek"
+        },
+        {
+            word: "et cetera",
+            definition: "and other similar things; and so forth",
+            sentence: "The store sells pencils, pens, paper, et cetera.",
+            origin: "Latin"
+        },
+        {
+            word: "vidimus",
+            definition: "an attested copy of an account; we have seen",
+            sentence: "The clerk provided a vidimus of the original document.",
+            origin: "Latin"
+        },
+        {
+            word: "delphine",
+            definition: "relating to or resembling a dolphin",
+            sentence: "The sculpture had a delphine grace and fluidity.",
+            origin: "Greek"
+        },
+        {
+            word: "slough",
+            definition: "a swamp or marsh; to shed or cast off",
+            sentence: "The snake began to slough its old skin.",
+            origin: "Old English"
+        },
+        {
+            word: "archipelago",
+            definition: "a group of islands",
+            sentence: "Indonesia is the world's largest archipelago with thousands of islands.",
+            origin: "Greek and Italian"
+        },
+        {
+            word: "serape",
+            definition: "a shawl or blanket worn as a cloak in Latin America",
+            sentence: "He wrapped the colorful serape around his shoulders for warmth.",
+            origin: "Spanish"
+        },
+        {
+            word: "puissance",
+            definition: "great power, influence, or prowess",
+            sentence: "The general was known for his military puissance.",
+            origin: "French"
+        },
+        {
+            word: "pinioning",
+            definition: "restraining someone by tying or holding their arms or legs",
+            sentence: "The guards were pinioning the prisoner's arms behind his back.",
+            origin: "Latin and French"
+        },
+        {
+            word: "chignon",
+            definition: "a knot or coil of hair arranged on the back of a woman's head",
+            sentence: "She wore her hair in an elegant chignon for the wedding.",
+            origin: "French"
+        },
+        {
+            word: "pheromone",
+            definition: "a chemical substance produced and released by an animal affecting the behavior of others",
+            sentence: "The moth released pheromones to attract a mate.",
+            origin: "Greek"
+        },
+        {
+            word: "galleon",
+            definition: "a large sailing ship with multiple decks, used from the 15th to 18th centuries",
+            sentence: "The Spanish galleon was laden with treasure from the New World.",
+            origin: "Spanish and French"
+        },
+        {
+            word: "magnanimous",
+            definition: "very generous or forgiving, especially toward a rival or less powerful person",
+            sentence: "The victor was magnanimous in praising his opponent's effort.",
+            origin: "Latin"
+        },
+        {
+            word: "chartreuse",
+            definition: "a pale green or yellow color; a liqueur made by Carthusian monks",
+            sentence: "She painted her room a soft chartreuse color.",
+            origin: "French"
+        },
+        {
+            word: "wainscoting",
+            definition: "wooden paneling that lines the lower part of the walls of a room",
+            sentence: "The dining room featured beautiful oak wainscoting.",
+            origin: "Dutch and German"
+        },
+        {
+            word: "Nehru",
+            definition: "relating to Jawaharlal Nehru; often used for a type of jacket with a stand-up collar",
+            sentence: "He wore a traditional Nehru jacket to the formal event.",
+            origin: "Hindi"
         }
     ],
 
