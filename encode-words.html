@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word List Encoder</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; }
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        .success {
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            display: none;
+        }
+        .info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            color: #1976d2;
+        }
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔒 Word List Encoder</h1>
+        <p>This tool encodes your word list to make it harder to read in the browser.</p>
+
+        <div class="info">
+            <strong>Note:</strong> This provides basic obfuscation. Determined users can still decode it.
+            For true security, you'd need a server-side solution.
+        </div>
+
+        <h3>Step 1: Load Current Words</h3>
+        <button onclick="loadWords()">Load words.js</button>
+
+        <h3>Step 2: Encoded Output</h3>
+        <textarea id="output" readonly placeholder="Encoded words will appear here..."></textarea>
+
+        <div class="success" id="success">✅ Words encoded successfully!</div>
+
+        <h3>Step 3: Save Encoded Version</h3>
+        <button onclick="copyToClipboard()">Copy to Clipboard</button>
+        <button onclick="downloadEncoded()">Download as words.js</button>
+
+        <hr style="margin: 30px 0;">
+
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Click "Load words.js" to encode your current word list</li>
+            <li>Copy the encoded output or download it</li>
+            <li>Replace your <code>words.js</code> file with the encoded version</li>
+            <li>The app will work normally, but words are harder to see in source code</li>
+        </ol>
+    </div>
+
+    <script src="words.js"></script>
+    <script>
+        function encodeWords(data) {
+            // Convert to JSON string
+            const jsonStr = JSON.stringify(data);
+
+            // Base64 encode
+            const encoded = btoa(unescape(encodeURIComponent(jsonStr)));
+
+            // Split into chunks for better obfuscation
+            const chunk1 = encoded.substring(0, Math.floor(encoded.length / 3));
+            const chunk2 = encoded.substring(Math.floor(encoded.length / 3), Math.floor(encoded.length * 2 / 3));
+            const chunk3 = encoded.substring(Math.floor(encoded.length * 2 / 3));
+
+            // Generate obfuscated variable names
+            const vars = ['_0x' + Math.random().toString(36).substr(2, 6),
+                         '_0x' + Math.random().toString(36).substr(2, 6),
+                         '_0x' + Math.random().toString(36).substr(2, 6)];
+
+            return `// Spelling Bee Word Database (Encoded)
+// This file has been encoded to protect the word list
+
+const ${vars[0]} = '${chunk1}';
+const ${vars[1]} = '${chunk2}';
+const ${vars[2]} = '${chunk3}';
+
+const _decode = (a, b, c) => {
+    const combined = a + b + c;
+    return JSON.parse(decodeURIComponent(escape(atob(combined))));
+};
+
+const wordDatabase = _decode(${vars[0]}, ${vars[1]}, ${vars[2]});
+
+// Helper function to get words by difficulty
+function getWordsByDifficulty(level) {
+    switch(level) {
+        case 1:
+            return wordDatabase.oneBee;
+        case 2:
+            return [...wordDatabase.oneBee, ...wordDatabase.twoBee];
+        case 3:
+            return [...wordDatabase.oneBee, ...wordDatabase.twoBee, ...wordDatabase.threeBee];
+        default:
+            return wordDatabase.oneBee;
+    }
+}
+
+// Helper function to shuffle array
+function shuffleArray(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
+`;
+        }
+
+        function loadWords() {
+            if (typeof wordDatabase === 'undefined') {
+                alert('Error: words.js not loaded. Make sure this file is in the same directory as words.js');
+                return;
+            }
+
+            const encoded = encodeWords(wordDatabase);
+            document.getElementById('output').value = encoded;
+            document.getElementById('success').style.display = 'block';
+        }
+
+        function copyToClipboard() {
+            const output = document.getElementById('output');
+            if (!output.value) {
+                alert('Please load and encode words first!');
+                return;
+            }
+            output.select();
+            document.execCommand('copy');
+            alert('✅ Copied to clipboard! Now replace your words.js file with this content.');
+        }
+
+        function downloadEncoded() {
+            const output = document.getElementById('output').value;
+            if (!output) {
+                alert('Please load and encode words first!');
+                return;
+            }
+
+            const blob = new Blob([output], { type: 'text/javascript' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'words.js';
+            a.click();
+            URL.revokeObjectURL(url);
+            alert('✅ Downloaded! Replace your old words.js with this file.');
+        }
+    </script>
+</body>
+</html>
